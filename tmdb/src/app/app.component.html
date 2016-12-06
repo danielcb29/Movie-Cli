@@ -1,0 +1,14 @@
+<h1>
+  {{title}}
+</h1>
+<h2>{{subtitle}}</h2>
+
+<div>
+	<input type="text" name="amount" [(ngModel)]="values.amount"/>
+	<input type="text" name="tax"  [(ngModel)]="values.tax" />
+	<input type="button" value="Calculator" (click)="calculate()" />
+</div>
+
+<div>
+	Result: {{result}}
+</div>
