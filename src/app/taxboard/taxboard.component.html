@@ -1,0 +1,18 @@
+<md-card class="box">
+	<md-card-content>
+		<img md-card-image src="assets/images/material.jpg" />
+		<md-card-title>{{title}}</md-card-title>
+		<md-card-subtitle>{{subtitle}}</md-card-subtitle>
+		<calculator [tax]="tax" (totalChange)="onTotalChange($event)"></calculator>
+		
+		<result [value]="result"></result>
+		<button md-mini-fab color="accent" (click)="increase()">
+			<md-icon class="md-24">add</md-icon>
+		</button>
+		<button md-mini-fab color="primary" (click)="decrease()">
+			<md-icon class="md-24">remove</md-icon>
+		</button>
+
+			
+	</md-card-content>
+</md-card>
