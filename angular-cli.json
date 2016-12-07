@@ -1,7 +1,7 @@
 {
   "project": {
     "version": "1.0.0-beta.21",
-    "name": "tmdb"
+    "name": "Movie-Cli"
   },
   "apps": [
     {
