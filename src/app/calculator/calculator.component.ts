@@ -19,7 +19,6 @@ export class CalculatorComponent implements OnInit, OnChanges {
 
 	ngOnChanges(changes:SimpleChanges): any{
 		this.calculate();
-		console.log(changes);
 	}
 
 	calculate(): any{
