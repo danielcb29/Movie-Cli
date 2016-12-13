@@ -9,18 +9,20 @@ import { ROUTES } from './app.routes'
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
-import { ResultComponent } from './result/result.component';
-import { CalculatorComponent } from './calculator/calculator.component';
-import { HomeComponent } from './home/home.component';
-import { TaxboardComponent } from './taxboard/taxboard.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { SearchComponent } from './search/search.component';
+import { MoviesComponent } from './movies/movies.component';
+import { PeopleComponent } from './people/people.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ResultComponent,
-    CalculatorComponent,
-    HomeComponent,
-    TaxboardComponent
+    HeaderComponent,
+    FooterComponent,
+    SearchComponent,
+    MoviesComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,
