@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import { MoviesComponent } from './movies/movies.component';
 import { PeopleComponent } from './people/people.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PeopleComponent } from './people/people.component';
     FooterComponent,
     SearchComponent,
     MoviesComponent,
-    PeopleComponent
+    PeopleComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

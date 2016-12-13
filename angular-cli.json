@@ -19,7 +19,10 @@
       "mobile": false,
       "styles": [
         "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "assets/css/animate.min.css",
+        "assets/css/template-responsive.min.css",
+        "assets/css/template.min.css"
       ],
       "scripts": [],
       "environments": {
