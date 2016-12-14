@@ -7,8 +7,19 @@ export class PeopleHelperService {
 	constructor(){}
 
 	castFloatPercet(value: number): string {
-		let castValue = value.toString().slice(0,4);
+		let castValue:string = "";
+		if (value){
+			castValue = value.toString().slice(0,4);	
+		}
 		return `${castValue}%`;
+	}
+
+	isEmpty(list): boolean{
+		let result: boolean = true;
+		if(list){
+			result = list.length == 0;
+		}
+		return result;
 	}
 
 

@@ -1,0 +1,15 @@
+.content{
+	margin: 20px 0 60px;
+}
+#img-list{
+	width: 300px;
+}
+.post-li{
+	width: 200px;
+}
+.post-image{
+	padding-top: 100%;
+}
+.empty-msn{
+	text-align: center;
+}

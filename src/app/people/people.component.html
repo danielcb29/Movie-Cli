@@ -5,17 +5,17 @@
 		    <div class="post-li col-md-4" *ngFor="let person of people | slice:0:16 " >
 		        <div class="post-content">
 		            <div class="post-image">
-		                <a href="#"><img src="{{getImgUrl(person.profile_path)}}" alt="Profile image of {{person.name}}" /></a>
+		                <a [routerLink]="['/actor', person.id]"><img src="{{getImgUrl(person.profile_path)}}" alt="Profile image of {{person.name}}" /></a>
 		            </div>
 		            <div class="post-info">
 		                <h4 class="post-title">
-		                    <a href="#">{{person.name}}</a>
+		                    <a [routerLink]="['/actor', person.id]">{{person.name}}</a>
 		                </h4>
 		                <div class="post-by">
 		                    <i class="fa fa-thumbs-o-up"></i> {{castFloatPercent(person.popularity)}} <span class="divider">|</span> <i class="fa fa-film"></i> {{getMoviesNames(person.known_for)}}
 		                </div>
 		                <div class="read-btn-container">
-		                    <a href="#">View details <i class="fa fa-angle-double-right"></i></a>
+		                    <a [routerLink]="['/actor', person.id]">View details <i class="fa fa-angle-double-right"></i></a>
 		                </div>
 		            </div>
 		        </div>

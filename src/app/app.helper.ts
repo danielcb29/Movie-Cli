@@ -5,11 +5,14 @@ import { Observable } from 'rxjs';
 export class AppHelperService {
 
 	baseUrl: string = "http://image.tmdb.org/t/p/w300/";
-
+	default:string = "assets/img/empty.png";
 	constructor(){}
 
 	getImgUrl(src: string): string {
-		return `${this.baseUrl}${src}`;
+		if(src){
+			return `${this.baseUrl}${src}`;	
+		}
+		return this.default;
 	}
 
 	getNamesList(list: Object[]): string[]{
