@@ -19,6 +19,7 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 import { MovieService } from './movies/movie.service';
 import { MovieDetailService } from './movie-detail/movie-detail.service';
+import { PeopleService } from './people/people.service';
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import { MovieDetailService } from './movie-detail/movie-detail.service';
     MaterialModule.forRoot(),
     RouterModule.forRoot(ROUTES, {useHash: false}),
   ],
-  providers: [MovieService, MovieDetailService],
+  providers: [MovieService, MovieDetailService, PeopleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

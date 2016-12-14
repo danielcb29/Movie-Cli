@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { PeopleService } from './people.service';
+
 
 @Component({
   selector: 'app-people',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeopleComponent implements OnInit {
 
-  constructor() { }
+	baseUrl: string = "http://image.tmdb.org/t/p/w300/";
+	people = [];
+	title = "Popular People!"
 
-  ngOnInit() {
-  }
+	constructor(
+		private peopleService: PeopleService,
+		private router: Router, 
+		private route: ActivatedRoute,
+	) { }
+
+	ngOnInit() {
+		this.peopleService.getPopular().subscribe(response => {
+			this.people = response;
+		});
+
+	}
+
+	getImgUrl(src: string): string {
+		return `${this.baseUrl}${src}`;
+	}
 
 }

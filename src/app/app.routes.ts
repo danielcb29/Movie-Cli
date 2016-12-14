@@ -7,4 +7,5 @@ export const ROUTES: Routes = [
 	{path: '', component: MoviesComponent},
 	{path: 'movies/:filter', component: MoviesComponent},
 	{path: 'movie/:id', component: MovieDetailComponent},
+	{path: 'people', component: PeopleComponent},
 ];
