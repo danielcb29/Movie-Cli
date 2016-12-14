@@ -5,10 +5,10 @@
                 <div class="section-container">
                     <h4 class="footer-title">Categories</h4>
                     <ul class="categories">
-                        <li><a href="#">Now playing</a></li>
-                        <li><a href="#">Popular</a></li>
-                        <li><a href="#">Top rated</a></li>
-                        <li><a href="#">Upcoming</a></li>
+                        <li><a [routerLink]="['/movies', 'now_playing']">Now playing</a></li>
+                        <li><a [routerLink]="['/']">Popular</a></li>
+                        <li><a [routerLink]="['/movies', 'top_rated']">Top rated</a></li>
+                        <li><a [routerLink]="['/movies', 'upcoming']">Upcoming</a></li>
                     </ul>
                 </div>
             </div>
