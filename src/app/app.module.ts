@@ -15,8 +15,11 @@ import { SearchComponent } from './search/search.component';
 import { MoviesComponent } from './movies/movies.component';
 import { PeopleComponent } from './people/people.component';
 import { MenuComponent } from './menu/menu.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 import { MovieService } from './movies/movie.service';
+import { MovieDetailService } from './movie-detail/movie-detail.service';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { MovieService } from './movies/movie.service';
     SearchComponent,
     MoviesComponent,
     PeopleComponent,
-    MenuComponent
+    MenuComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,7 @@ import { MovieService } from './movies/movie.service';
     MaterialModule.forRoot(),
     RouterModule.forRoot(ROUTES, {useHash: false}),
   ],
-  providers: [MovieService],
+  providers: [MovieService, MovieDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

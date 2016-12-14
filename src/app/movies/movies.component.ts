@@ -27,51 +27,36 @@ export class MoviesComponent implements OnInit {
 		});
 
 		this.route.params.subscribe((param: any) => {
-			if (param['filter']){
-				switch (param['filter']) {
-					case "top_rated":
-						this.movieService.getTopRated().subscribe(response => {
-							this.moviesList = response;
-							this.title = "Top Rated Movies!";
-						});		
-						break;
+			switch (param['filter']) {
+				case "top_rated":
+					this.movieService.getTopRated().subscribe(response => {
+						this.moviesList = response;
+						this.title = "Top Rated Movies!";
+					});		
+					break;
 
-					case "now_playing":
+				case "now_playing":
+					this.movieService.getNowPlaying().subscribe(response => {
+						this.moviesList = response;
+						this.title = "Now Playing Movies!";			
+					});
+					break;				
+				
+				case "upcoming":
+					this.movieService.getUpcoming().subscribe(response => {
 						this.moviesList = this.moviesUpcoming;
-						this.title = "Now Playing Movies!";	
-						break;				
-					
-					case "upcoming":
-						this.movieService.getUpcoming().subscribe(response => {
-							this.moviesList = response;
-							this.title = "Upcoming Movies!";	
-						});
-						break;				
+						this.title = "Upcoming Movies!";	
+					})
+					break;				
 
-					default:
-						this.movieService.getPopular().subscribe(response => {
-							this.moviesList = response;
-							this.title = "Popular Movies!";
-						});	
-						break;
-				}
-			}else{
-				if(param['id']){
-					//Get movie by id
-				}else{
+				default:
 					this.movieService.getPopular().subscribe(response => {
 						this.moviesList = response;
 						this.title = "Popular Movies!";
 					});	
-				}
+					break;
 			}
-			
-
-			
 		});
-		
-
-		
 	}
 
 	getImgUrl(src: string): string {

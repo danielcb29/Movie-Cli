@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row row-space-30">
         	<h1>{{title}}</h1> <hr/>
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <ul class="post-list">
-                    <li *ngFor="let movie of moviesList | slice:0:5 ">
+                    <li>
                         <div class="post-left-info">
                             <div class="post-date">
                                 <span class="day"><i class="fa fa-calendar"></i>{{movie.release_date | date:'d'}}</span>
@@ -25,42 +25,46 @@
 	                                    <a [routerLink]="['/movie', movie.id]">{{movie.original_title}}</a>
 	                                </h4>
 	                                <div class="post-by">
-	                                    <i>{{getGenreNames(movie.genre_ids)}}</i>
+	                                    <i>{{getNamesList(movie.genres)}}</i>
 	                                </div>
 	                                <div class="post-desc">
 	                                     {{movie.overview}}
 	                                </div>	
+	                                <div>
+	                                	<h4>Aditional Information:</h4>
+	                                	<p>
+	                                		<b>Original Languague:</b>
+	                                		{{movie.original_language | uppercase}}
+	                                	</p>
+	                                	<p>
+	                                		<b>Production Companies:</b>
+	                                		<i class="fa fa-building"></i>
+
+	                                		{{getNamesList(movie.production_companies)}}
+	                                	</p>
+	                                	<p>
+	                                		<b>Production Countries:</b>
+	                                		<i class="fa fa-globe"></i>
+	                                		{{getNamesList(movie.production_countries)}}
+	                                	</p>
+	                                	<p>
+	                                		<b>Runtime:</b>
+	                                		<i class="fa fa-clock-o"></i>
+	                                		{{movie.runtime}} minutes
+	                                	</p>
+	                                	<p>
+	                                		<b>Spoken Languagues:</b>
+	                                		<i class="fa fa-language"></i>
+	                                		{{getNamesList(movie.spoken_languages)}}
+	                                	</p>
+
+	                                </div>
                             	</div>
                                 
-                            </div>
-                            <div class="read-btn-container">
-                                <a [routerLink]="['/movie', movie.id]" class="read-btn">View details <i class="fa fa-angle-double-right"></i></a>
                             </div>
                         </div>
                     </li> 
                 </ul>
-            </div>
-            <div class="col-md-3">
-                <div class="section-container">
-                    <h4 class="section-title"><span>Categories</span></h4>
-                    <ul class="sidebar-list">
-                        <li><a [routerLink]="['/movies', 'now_playing']">Now playing</a></li>
-                        <li><a [routerLink]="['/']">Popular</a></li>
-                        <li><a [routerLink]="['/movies', 'top_rated']">Top rated</a></li>
-                        <li><a [routerLink]="['/movies', 'upcoming']">Upcoming</a></li>
-                    </ul>
-                </div>
-                <div class="section-container">
-                    <h4 class="section-title"><span>Upcoming</span></h4>
-                    <ul class="sidebar-recent-post">
-                        <li *ngFor="let item of moviesUpcoming | slice:0:5 " >
-                            <div class="info">
-                                <h4 class="title"><a [routerLink]="['/movie', item.id]">{{item.original_title}}</a></h4>
-                                <div class="date">{{item.release_date | date}}</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@
                     <ul class="recent-post">
                         <li *ngFor="let item of moviesUpcoming | slice:0:3 ">
                             <h4>
-                                <a href="#">{{item.original_title}}</a>
+                                <a [routerLink]="['/movie', item.id]">{{item.original_title}}</a>
                                 <span class="time">{{item.release_date | date}}</span>
                             </h4>
                         </li>
