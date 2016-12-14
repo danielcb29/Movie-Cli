@@ -1,0 +1,9 @@
+#search-input{
+	background-color: #f4f4f4;
+    border: 2px solid #ccc;
+} 
+#search-group{
+	padding-top: 25px;
+    padding-left: 150px;
+    padding-right: 150px;
+}

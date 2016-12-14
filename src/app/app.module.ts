@@ -3,26 +3,43 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.routes'
 
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
-import { ResultComponent } from './result/result.component';
-import { CalculatorComponent } from './calculator/calculator.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { SearchComponent } from './search/search.component';
+import { MoviesComponent } from './movies/movies.component';
+import { PeopleComponent } from './people/people.component';
+import { MenuComponent } from './menu/menu.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+
+import { MovieService } from './movies/movie.service';
+import { MovieDetailService } from './movie-detail/movie-detail.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ResultComponent,
-    CalculatorComponent
+    HeaderComponent,
+    FooterComponent,
+    SearchComponent,
+    MoviesComponent,
+    PeopleComponent,
+    MenuComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
+    RouterModule.forRoot(ROUTES, {useHash: false}),
   ],
-  providers: [],
+  providers: [MovieService, MovieDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

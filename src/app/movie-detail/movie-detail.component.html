@@ -1,0 +1,71 @@
+<div id="content" class="content">
+    <div class="container">
+        <div class="row row-space-30">
+        	<h1>{{title}}</h1> <hr/>
+            <div class="col-md-12">
+                <ul class="post-list">
+                    <li>
+                        <div class="post-left-info">
+                            <div class="post-date">
+                                <span class="day"><i class="fa fa-calendar"></i>{{movie.release_date | date:'d'}}</span>
+                                <span class="month">{{movie.release_date | date:'MMM'}}, {{movie.release_date | date:'y'}}</span>
+                            </div>
+                            <div class="post-likes">
+                                <i class="fa fa-star"></i>
+                                <span class="number">{{movie.vote_average}}</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-info">
+                            	<div class="col-md-4">
+                            		<img id="img-list" src="{{getImgUrl(movie.poster_path)}}" alt="Poster of movie: {{movie.original_title}}" sizes="185px"/>
+                            	</div>
+                            	<div class="col-md-8">
+                            		<h4 class="post-title">
+	                                    <a [routerLink]="['/movie', movie.id]">{{movie.original_title}}</a>
+	                                </h4>
+	                                <div class="post-by">
+	                                    <i>{{getNamesList(movie.genres)}}</i>
+	                                </div>
+	                                <div class="post-desc">
+	                                     {{movie.overview}}
+	                                </div>	
+	                                <div>
+	                                	<h4>Aditional Information:</h4>
+	                                	<p>
+	                                		<b>Original Languague:</b>
+	                                		{{movie.original_language | uppercase}}
+	                                	</p>
+	                                	<p>
+	                                		<b>Production Companies:</b>
+	                                		<i class="fa fa-building"></i>
+
+	                                		{{getNamesList(movie.production_companies)}}
+	                                	</p>
+	                                	<p>
+	                                		<b>Production Countries:</b>
+	                                		<i class="fa fa-globe"></i>
+	                                		{{getNamesList(movie.production_countries)}}
+	                                	</p>
+	                                	<p>
+	                                		<b>Runtime:</b>
+	                                		<i class="fa fa-clock-o"></i>
+	                                		{{movie.runtime}} minutes
+	                                	</p>
+	                                	<p>
+	                                		<b>Spoken Languagues:</b>
+	                                		<i class="fa fa-language"></i>
+	                                		{{getNamesList(movie.spoken_languages)}}
+	                                	</p>
+
+	                                </div>
+                            	</div>
+                                
+                            </div>
+                        </div>
+                    </li> 
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

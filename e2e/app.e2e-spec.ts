@@ -1,10 +1,10 @@
-import { TmdbPage } from './app.po';
+import { MovieCliPage } from './app.po';
 
-describe('tmdb App', function() {
-  let page: TmdbPage;
+describe('movie-cli App', function() {
+  let page: MovieCliPage;
 
   beforeEach(() => {
-    page = new TmdbPage();
+    page = new MovieCliPage();
   });
 
   it('should display message saying app works', () => {
