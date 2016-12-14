@@ -5,4 +5,5 @@ import { PeopleComponent } from './people/people.component';
 
 export const ROUTES: Routes = [
 	{path: '', component: MoviesComponent},
+	{path: 'movies/:filter', component: MoviesComponent},
 ];

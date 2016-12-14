@@ -4,7 +4,7 @@
         	<h1>{{title}}</h1><hr/>
             <div class="col-md-9">
                 <ul class="post-list">
-                    <li *ngFor="let movie of moviesUpcoming | slice:0:5 ">
+                    <li *ngFor="let movie of moviesList | slice:0:5 ">
                         <div class="post-left-info">
                             <div class="post-date">
                                 <span class="day"><i class="fa fa-calendar"></i>{{movie.release_date | date:'d'}}</span>
@@ -44,11 +44,10 @@
                 <div class="section-container">
                     <h4 class="section-title"><span>Categories</span></h4>
                     <ul class="sidebar-list">
-                        <li><a href="#">Latest</a></li>
-                        <li><a href="#">Now playing</a></li>
-                        <li><a href="#">Popular</a></li>
-                        <li><a href="#">Top rated</a></li>
-                        <li><a href="#">Upcoming</a></li>
+                        <li><a [routerLink]="['/movies', 'now_playing']">Now playing</a></li>
+                        <li><a [routerLink]="['/']">Popular</a></li>
+                        <li><a [routerLink]="['/movies', 'top_rated']">Top rated</a></li>
+                        <li><a [routerLink]="['/movies', 'upcoming']">Upcoming</a></li>
                     </ul>
                 </div>
                 <div class="section-container">

@@ -28,6 +28,22 @@ export class MovieService {
 		})
 	}
 
+	getTopRated(): Observable<any>{
+		let urlUpcoming = '/top_rated';
+		return this.http.get(`${this.baseUrl}${urlUpcoming}?api_key=${this.apiKey}`)
+		.map(response => {
+			return response.json().results; 
+		})
+	}
+
+	getNowPlaying(): Observable<any>{
+		let urlUpcoming = '/now_playing';
+		return this.http.get(`${this.baseUrl}${urlUpcoming}?api_key=${this.apiKey}`)
+		.map(response => {
+			return response.json().results; 
+		})
+	}
+
 	getGenresName(ids: number[]): string[]{
 		let result: string[] = []
 		for(let id of ids){
