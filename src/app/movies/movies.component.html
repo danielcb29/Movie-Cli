@@ -25,7 +25,7 @@
 	                                    <a href="#">{{movie.original_title}}</a>
 	                                </h4>
 	                                <div class="post-by">
-	                                    Generos: <i>{{getGenreNames(movie.genre_ids)}}</i>
+	                                    <i>{{getGenreNames(movie.genre_ids)}}</i>
 	                                </div>
 	                                <div class="post-desc">
 	                                     {{movie.overview}}
@@ -39,20 +39,6 @@
                         </div>
                     </li> 
                 </ul>
-                <!--Pagination-->
-                <!--div class="section-container">
-                    <div class="pagination-container text-center">
-                        <ul class="pagination m-t-0 m-b-0">
-                            <li class="disabled"><a href="javascript:;">Prev</a></li>
-                            <li class="active"><a href="javascript:;">1</a></li>
-                            <li><a href="javascript:;">2</a></li>
-                            <li><a href="javascript:;">3</a></li>
-                            <li><span class="text">...</span></li>
-                            <li><a href="javascript:;">1797</a></li>
-                            <li><a href="javascript:;">Next</a></li>
-                        </ul>
-                    </div>
-                </div-->
             </div>
             <div class="col-md-3">
                 <div class="section-container">
@@ -71,7 +57,7 @@
                         <li *ngFor="let item of moviesUpcoming | slice:0:5 " >
                             <div class="info">
                                 <h4 class="title"><a href="#">{{item.original_title}}</a></h4>
-                                <div class="date">{{item.release_date}}</div>
+                                <div class="date">{{item.release_date | date}}</div>
                             </div>
                         </li>
                     </ul>

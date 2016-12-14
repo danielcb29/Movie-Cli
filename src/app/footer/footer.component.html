@@ -17,22 +17,10 @@
                 <div class="section-container">
                     <h4 class="footer-title">Upcoming</h4>
                     <ul class="recent-post">
-                        <li>
+                        <li *ngFor="let item of moviesUpcoming | slice:0:3 ">
                             <h4>
-                                <a href="#">Nam ut urna hendrerit</a>
-                                <span class="time">February 22, 2015</span>
-                            </h4>
-                        </li>
-                        <li>
-                            <h4>
-                                <a href="#">Class aptent taciti sociosqu</a>
-                                <span class="time">July 15, 2015</span>
-                            </h4>
-                        </li>
-                        <li>
-                            <h4>
-                                <a href="#">Donec rhoncus arcu</a>
-                                <span class="time">March 21, 2015</span>
+                                <a href="#">{{item.original_title}}</a>
+                                <span class="time">{{item.release_date | date}}</span>
                             </h4>
                         </li>
                     </ul>

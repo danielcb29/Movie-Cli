@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from '../movies/movie.service';
+
 
 @Component({
   selector: 'footer',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+	moviesUpcoming = []
 
-  ngOnInit() {
-  }
+	constructor(private movieService: MovieService) { }
+
+	ngOnInit() {
+	  	this.movieService.getUpcoming().subscribe(response => {
+			this.moviesUpcoming = response;
+		})
+	}
 
 }
