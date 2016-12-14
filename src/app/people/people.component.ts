@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PeopleService } from './people.service';
-
+import { AppHelperService } from '../app.helper';
+import { MovieHelperService } from '../movies/movie.helper';
+import { PeopleHelperService } from './people.helper';
 
 @Component({
   selector: 'app-people',
@@ -10,7 +12,6 @@ import { PeopleService } from './people.service';
 })
 export class PeopleComponent implements OnInit {
 
-	baseUrl: string = "http://image.tmdb.org/t/p/w300/";
 	people = [];
 	title = "Popular People!"
 
@@ -18,6 +19,9 @@ export class PeopleComponent implements OnInit {
 		private peopleService: PeopleService,
 		private router: Router, 
 		private route: ActivatedRoute,
+		private appHelper: AppHelperService,
+		private movieHelper: MovieHelperService,
+		private peopleHelper: PeopleHelperService
 	) { }
 
 	ngOnInit() {
@@ -28,7 +32,16 @@ export class PeopleComponent implements OnInit {
 	}
 
 	getImgUrl(src: string): string {
-		return `${this.baseUrl}${src}`;
+		return this.appHelper.getImgUrl(src);
+	}
+
+	getMoviesNames(movies: Object[]): string{
+		let moviesList = this.movieHelper.getMoviesNames(movies).join().slice(0,31);
+		return `${moviesList}...`;
+	}
+
+	castFloatPercent(value: number): string{
+		return this.peopleHelper.castFloatPercet(value);
 	}
 
 }

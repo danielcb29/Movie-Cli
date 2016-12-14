@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
 import { Observable } from 'rxjs';
-import { Genres } from './genres.mock';
 
 @Injectable()
 export class MovieService {
@@ -44,11 +43,4 @@ export class MovieService {
 		})
 	}
 
-	getGenresName(ids: number[]): string[]{
-		let result: string[] = []
-		for(let id of ids){
-			result.push(Genres[id]);
-		}
-		return result;
-	}
 }

@@ -2,24 +2,20 @@
 	<div class="container">
 		<h1>{{title}}</h1> <hr/>
 		<div class="post-list post-grid">
-		    <div class="post-li col-md-4" *ngFor="let person of people | slice:0:15 " >
+		    <div class="post-li col-md-4" *ngFor="let person of people | slice:0:16 " >
 		        <div class="post-content">
 		            <div class="post-image">
 		                <a href="#"><img src="{{getImgUrl(person.profile_path)}}" alt="Profile image of {{person.name}}" /></a>
 		            </div>
 		            <div class="post-info">
 		                <h4 class="post-title">
-		                    <a href="post_detail.html">{{person.name}}</a>
+		                    <a href="#">{{person.name}}</a>
 		                </h4>
 		                <div class="post-by">
-		                    Posted By <a href="#">admin</a> <span class="divider">|</span> 03 Sep 2015
-		                </div>
-		                <div class="post-desc">
-		                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit dolor, elementum ut ligula ultricies, 
-		                    aliquet eleifend risus. Vivamus ut auctor sapien. Etiam consectetur non leo at auctor. [...]
+		                    <i class="fa fa-thumbs-o-up"></i> {{castFloatPercent(person.popularity)}} <span class="divider">|</span> <i class="fa fa-film"></i> {{getMoviesNames(person.known_for)}}
 		                </div>
 		                <div class="read-btn-container">
-		                    <a href="post_detail.html">Read More <i class="fa fa-angle-double-right"></i></a>
+		                    <a href="#">View details <i class="fa fa-angle-double-right"></i></a>
 		                </div>
 		            </div>
 		        </div>
