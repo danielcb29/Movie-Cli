@@ -1,3 +1,82 @@
-<p>
-  movies works!
-</p>
+<div id="content" class="content">
+    <div class="container">
+        <div class="row row-space-30">
+        	<h1>{{title}}</h1><hr/>
+            <div class="col-md-9">
+                <ul class="post-list">
+                    <li *ngFor="let movie of moviesUpcoming | slice:0:5 ">
+                        <div class="post-left-info">
+                            <div class="post-date">
+                                <span class="day"><i class="fa fa-calendar"></i>{{movie.release_date | date:'d'}}</span>
+                                <span class="month">{{movie.release_date | date:'MMM'}}, {{movie.release_date | date:'y'}}</span>
+                            </div>
+                            <div class="post-likes">
+                                <i class="fa fa-star"></i>
+                                <span class="number">{{movie.vote_average}}</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-info">
+                            	<div class="col-md-4">
+                            		<a href="post_detail.html"><img id="img-list" src="{{getImgUrl(movie.poster_path)}}" alt="Poster of movie: {{movie.original_title}}" sizes="185px"/></a>
+                            	</div>
+                            	<div class="col-md-8">
+                            		<h4 class="post-title">
+	                                    <a href="#">{{movie.original_title}}</a>
+	                                </h4>
+	                                <div class="post-by">
+	                                    Generos: <i>{{getGenreNames(movie.genre_ids)}}</i>
+	                                </div>
+	                                <div class="post-desc">
+	                                     {{movie.overview}}
+	                                </div>	
+                            	</div>
+                                
+                            </div>
+                            <div class="read-btn-container">
+                                <a href="#" class="read-btn">View details <i class="fa fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    </li> 
+                </ul>
+                <!--Pagination-->
+                <!--div class="section-container">
+                    <div class="pagination-container text-center">
+                        <ul class="pagination m-t-0 m-b-0">
+                            <li class="disabled"><a href="javascript:;">Prev</a></li>
+                            <li class="active"><a href="javascript:;">1</a></li>
+                            <li><a href="javascript:;">2</a></li>
+                            <li><a href="javascript:;">3</a></li>
+                            <li><span class="text">...</span></li>
+                            <li><a href="javascript:;">1797</a></li>
+                            <li><a href="javascript:;">Next</a></li>
+                        </ul>
+                    </div>
+                </div-->
+            </div>
+            <div class="col-md-3">
+                <div class="section-container">
+                    <h4 class="section-title"><span>Categories</span></h4>
+                    <ul class="sidebar-list">
+                        <li><a href="#">Latest</a></li>
+                        <li><a href="#">Now playing</a></li>
+                        <li><a href="#">Popular</a></li>
+                        <li><a href="#">Top rated</a></li>
+                        <li><a href="#">Upcoming</a></li>
+                    </ul>
+                </div>
+                <div class="section-container">
+                    <h4 class="section-title"><span>Upcoming</span></h4>
+                    <ul class="sidebar-recent-post">
+                        <li *ngFor="let item of moviesUpcoming | slice:0:5 " >
+                            <div class="info">
+                                <h4 class="title"><a href="#">{{item.original_title}}</a></h4>
+                                <div class="date">{{item.release_date}}</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

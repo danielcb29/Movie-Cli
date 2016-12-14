@@ -16,6 +16,8 @@ import { MoviesComponent } from './movies/movies.component';
 import { PeopleComponent } from './people/people.component';
 import { MenuComponent } from './menu/menu.component';
 
+import { MovieService } from './movies/movie.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,7 @@ import { MenuComponent } from './menu/menu.component';
     MaterialModule.forRoot(),
     RouterModule.forRoot(ROUTES, {useHash: false}),
   ],
-  providers: [],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
