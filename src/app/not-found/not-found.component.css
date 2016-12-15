@@ -1,0 +1,18 @@
+.content{
+	margin: 20px 0 60px;
+}
+.error{
+	margin: 0 auto;
+    text-align: center;
+}
+.error-code{
+	bottom: 60%;
+    color: #2d353c;
+    font-size: 96px;
+    line-height: 100px
+}
+.error-content{
+	top: 40%;
+    bottom: 0;
+    padding-top: 15px;
+}

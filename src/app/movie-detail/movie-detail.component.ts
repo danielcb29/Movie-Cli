@@ -25,6 +25,8 @@ export class MovieDetailComponent implements OnInit {
 			let id = param['id'];
 			this.movieDetailService.getMovieDetail(id).subscribe(response => {
 				this.movie = response;
+			}, err => {
+				this.router.navigate(['/404']);
 			});
 		});
 	}

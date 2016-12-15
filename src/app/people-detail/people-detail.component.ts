@@ -29,12 +29,18 @@ export class PeopleDetailComponent implements OnInit {
 			let id = param['id'];
 			this.peopleDetailService.getActorDetails(id).subscribe(response => {
 				this.actor = response;
+			}, err => {
+				this.router.navigate(['/404']);
 			});
 			this.peopleDetailService.getCastActor(id).subscribe(response => {
 				this.cast = response;
+			} , err => {
+				this.router.navigate(['/404']);
 			});
 			this.peopleDetailService.getCrewActor(id).subscribe(response => {
 				this.crew = response;
+			}, err => {
+				this.router.navigate(['/404']);
 			});
 		});
 	}

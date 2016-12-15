@@ -18,6 +18,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { PeopleDetailComponent } from './people-detail/people-detail.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 import { MovieService } from './movies/movie.service';
 import { MovieDetailService } from './movie-detail/movie-detail.service';
@@ -44,7 +45,8 @@ import {CapitalizePipe} from "./pipes/capitalize.pipe";
     MovieDetailComponent,
     PeopleDetailComponent,
     CapitalizePipe,
-    AboutMeComponent
+    AboutMeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
