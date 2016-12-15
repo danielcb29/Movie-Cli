@@ -17,6 +17,7 @@ import { PeopleComponent } from './people/people.component';
 import { MenuComponent } from './menu/menu.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { PeopleDetailComponent } from './people-detail/people-detail.component';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 import { MovieService } from './movies/movie.service';
 import { MovieDetailService } from './movie-detail/movie-detail.service';
@@ -30,6 +31,7 @@ import { SearchService } from './search/search.service';
 
 import {CapitalizePipe} from "./pipes/capitalize.pipe";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,8 @@ import {CapitalizePipe} from "./pipes/capitalize.pipe";
     MenuComponent,
     MovieDetailComponent,
     PeopleDetailComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,
