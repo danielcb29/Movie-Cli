@@ -14,5 +14,23 @@ export class PeopleHelperService {
 		return `${castValue}%`;
 	}
 
+	getGenderDisplay(id: number): string{
+		let result: string = "";
+		switch (id) {
+			case 1:
+				result = "Female";
+				break;
+			
+			case 2:
+				result = "Male";
+				break;
+
+			default:
+				result = "Unkown";
+				break;
+		}
+		return result;
+	}
+
 
 }

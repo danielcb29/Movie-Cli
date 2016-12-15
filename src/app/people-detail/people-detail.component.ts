@@ -51,8 +51,12 @@ export class PeopleDetailComponent implements OnInit {
 		return this.appHelper.isEmpty(list);
 	}
 
-	getTotalMovies(){
+	getTotalMovies(): number{
 		return this.cast.length + this.crew.length;
+	}
+
+	getGenderDisplay(id: number): string{
+		return this.peopleHelper.getGenderDisplay(id);
 	}
 
 }

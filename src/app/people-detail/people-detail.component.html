@@ -12,7 +12,9 @@
                             </div>
                             <div class="post-likes">
                                 <i class="fa fa-thumbs-o-up"></i>
+                                <span [hidden]="actor.popularity"> -- </span>
                                 <span class="number">{{castFloatPercent(actor.popularity)}}</span>
+
                             </div>
                         </div>
                         <div class="post-content">
@@ -37,7 +39,7 @@
 	                            		<h4>Personal Information:</h4>
 	                            		<p>
 	                            			<b>Gender:</b>
-	                            			{{actor.gender}}
+	                            			{{getGenderDisplay(actor.gender)}}
 	                            		</p>
 	                            		<p>
 	                            			<b>Birthday:</b>
