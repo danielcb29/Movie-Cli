@@ -16,9 +16,21 @@ import { MoviesComponent } from './movies/movies.component';
 import { PeopleComponent } from './people/people.component';
 import { MenuComponent } from './menu/menu.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { PeopleDetailComponent } from './people-detail/people-detail.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 import { MovieService } from './movies/movie.service';
 import { MovieDetailService } from './movie-detail/movie-detail.service';
+import { PeopleService } from './people/people.service';
+
+import { AppHelperService } from './app.helper';
+import { MovieHelperService } from './movies/movie.helper';
+import { PeopleHelperService } from './people/people.helper';
+import { PeopleDetailService } from './people-detail/people-detail.service';
+import { SearchService } from './search/search.service';
+
+import {CapitalizePipe} from "./pipes/capitalize.pipe";
 
 
 @NgModule({
@@ -30,7 +42,11 @@ import { MovieDetailService } from './movie-detail/movie-detail.service';
     MoviesComponent,
     PeopleComponent,
     MenuComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    PeopleDetailComponent,
+    CapitalizePipe,
+    AboutMeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +55,16 @@ import { MovieDetailService } from './movie-detail/movie-detail.service';
     MaterialModule.forRoot(),
     RouterModule.forRoot(ROUTES, {useHash: false}),
   ],
-  providers: [MovieService, MovieDetailService],
+  providers: [
+    MovieService, 
+    MovieDetailService, 
+    PeopleService, 
+    AppHelperService,
+    MovieHelperService,
+    PeopleHelperService,
+    PeopleDetailService,
+    SearchService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

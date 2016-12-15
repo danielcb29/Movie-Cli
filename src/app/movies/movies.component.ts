@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MovieService } from './movie.service';
+import { AppHelperService } from '../app.helper';
+import { MovieHelperService } from './movie.helper';
 
 @Component({
   selector: 'app-movies',
@@ -9,7 +11,6 @@ import { MovieService } from './movie.service';
 })
 export class MoviesComponent implements OnInit {
 
-	baseUrl: string = "http://image.tmdb.org/t/p/w300/";
 	moviesList = [];
 	moviesUpcoming = [];
 	title: string = "";
@@ -18,6 +19,8 @@ export class MoviesComponent implements OnInit {
 		private movieService: MovieService,
 		private router: Router, 
   		private route: ActivatedRoute,
+  		private appHelper: AppHelperService,
+  		private movieHelper: MovieHelperService
   		) { }
 
 	ngOnInit() {
@@ -60,11 +63,11 @@ export class MoviesComponent implements OnInit {
 	}
 
 	getImgUrl(src: string): string {
-		return `${this.baseUrl}${src}`;
+		return this.appHelper.getImgUrl(src);
 	}
 
 	getGenreNames(ids: number[]){
-		return this.movieService.getGenresName(ids);
+		return this.movieHelper.getGenresName(ids);
 	}
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MovieDetailService } from './movie-detail.service';
+import { AppHelperService } from '../app.helper';
 
 @Component({
   selector: 'app-movie-detail',
@@ -9,14 +10,14 @@ import { MovieDetailService } from './movie-detail.service';
 })
 export class MovieDetailComponent implements OnInit {
 
-	baseUrl: string = "http://image.tmdb.org/t/p/w300/";
 	movie: Object = {};
 	title: string = "Movie Detail!"
 
 	constructor(
 		private movieDetailService: MovieDetailService,
 		private router: Router, 
-  		private route: ActivatedRoute
+  		private route: ActivatedRoute,
+  		private appHelper: AppHelperService
   		) { }
 
 	ngOnInit() {
@@ -24,21 +25,17 @@ export class MovieDetailComponent implements OnInit {
 			let id = param['id'];
 			this.movieDetailService.getMovieDetail(id).subscribe(response => {
 				this.movie = response;
+			}, err => {
+				this.router.navigate(['/404']);
 			});
 		});
 	}
 
 	getNamesList(list: Object[]): string[]{
-		let result: string[] = []
-		if(list){
-			for(let object of list){
-				result.push(object['name']);
-			}	
-		}
-		return result;
+		return this.appHelper.getNamesList(list);
 	}
 
 	getImgUrl(src: string): string {
-		return `${this.baseUrl}${src}`;
+		return this.appHelper.getImgUrl(src);
 	}
 }
