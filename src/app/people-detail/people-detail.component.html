@@ -81,6 +81,7 @@
 					                </h4>
 					                <div class="post-by">
 					                    <i class="fa fa-calendar"></i> Release date : {{movie.release_date | date}}
+					                    <span [hidden]="movie.release_date"> -- </span>
 					                </div>
 					                <div class="read-btn-container">
 					                    <a [routerLink]="['/movie', movie.id]">View details <i class="fa fa-angle-double-right"></i></a>
