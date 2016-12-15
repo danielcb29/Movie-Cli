@@ -14,6 +14,8 @@ export class MoviesComponent implements OnInit {
 	moviesList = [];
 	moviesUpcoming = [];
 	title: string = "";
+	order: string = "";
+	subtitle: string  ="";
 
 	constructor(
 		private movieService: MovieService,
@@ -35,20 +37,26 @@ export class MoviesComponent implements OnInit {
 					this.movieService.getTopRated().subscribe(response => {
 						this.moviesList = response;
 						this.title = "Top Rated Movies!";
+						this.order = "vote_average";
+						this.subtitle = "ordered by vote average...";
 					});		
 					break;
 
 				case "now_playing":
 					this.movieService.getNowPlaying().subscribe(response => {
 						this.moviesList = response;
-						this.title = "Now Playing Movies!";			
+						this.title = "Now Playing Movies!";
+						this.order = "vote_average";
+						this.subtitle = "ordered by vote average...";		
 					});
 					break;				
 				
 				case "upcoming":
 					this.movieService.getUpcoming().subscribe(response => {
 						this.moviesList = this.moviesUpcoming;
-						this.title = "Upcoming Movies!";	
+						this.title = "Upcoming Movies!";
+						this.order = "release_date";
+						this.subtitle = "ordered by release date...";	
 					})
 					break;				
 
@@ -56,6 +64,8 @@ export class MoviesComponent implements OnInit {
 					this.movieService.getPopular().subscribe(response => {
 						this.moviesList = response;
 						this.title = "Popular Movies!";
+						this.order = "release_date";
+						this.subtitle = "ordered by release date...";
 					});	
 					break;
 			}

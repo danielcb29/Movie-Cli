@@ -8,7 +8,11 @@
                         <div class="post-left-info">
                             <div class="post-date">
                                 <span class="day"><i class="fa fa-calendar"></i>{{movie.release_date | date:'d'}}</span>
-                                <span class="month">{{movie.release_date | date:'MMM'}}, {{movie.release_date | date:'y'}}</span>
+                                <span class="month">
+                                {{movie.release_date | date:'MMM'}}
+                                <span [hidden]="movie.release_date"> -- </span>, {{movie.release_date | date:'y'}}
+                                <span [hidden]="movie.release_date"> -- </span>
+                                </span>
                             </div>
                             <div class="post-likes">
                                 <i class="fa fa-star"></i>
@@ -29,12 +33,14 @@
 	                                </div>
 	                                <div class="post-desc">
 	                                     {{movie.overview}}
+	                                     <span [hidden]="movie.overview"> -- </span>
 	                                </div>	
 	                                <div>
 	                                	<h4>Aditional Information:</h4>
 	                                	<p>
 	                                		<b>Original Languague:</b>
 	                                		{{movie.original_language | uppercase}}
+	                                		<span [hidden]="movie.original_language"> -- </span>
 	                                	</p>
 	                                	<p>
 	                                		<b>Production Companies:</b>
@@ -50,7 +56,9 @@
 	                                	<p>
 	                                		<b>Runtime:</b>
 	                                		<i class="fa fa-clock-o"></i>
-	                                		{{movie.runtime}} minutes
+	                                		{{movie.runtime}}
+	                                		<span [hidden]="movie.runtime"> -- </span>
+	                                		 minutes
 	                                	</p>
 	                                	<p>
 	                                		<b>Spoken Languagues:</b>

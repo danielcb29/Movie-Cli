@@ -31,6 +31,7 @@ import { PeopleDetailService } from './people-detail/people-detail.service';
 import { SearchService } from './search/search.service';
 
 import {CapitalizePipe} from "./pipes/capitalize.pipe";
+import {OrderBy} from "./pipes/order-by.pipe";
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import {CapitalizePipe} from "./pipes/capitalize.pipe";
     PeopleDetailComponent,
     CapitalizePipe,
     AboutMeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    OrderBy
   ],
   imports: [
     BrowserModule,
