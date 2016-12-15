@@ -68,9 +68,9 @@
                 </ul>
                 <hr/>
                 <div>
-                	<h3>Cast <small>last five...</small></h3>
+                	<h3>Cast <small>last five, orderded by release date...</small></h3>
                 	<div class="post-list post-grid">
-					    <div class="post-li col-md-4" *ngFor="let movie of cast | slice:0:5 " >
+					    <div class="post-li col-md-4" *ngFor="let movie of cast | slice:0:5 | orderBy:'-':'release_date'" >
 					        <div class="post-content">
 					            <div class="post-image">
 					                <a [routerLink]="['/movie', movie.id]"><img src="{{getImgUrl(movie.poster_path)}}" alt="Profile image of {{movie.original_title}}" /></a>
@@ -93,9 +93,9 @@
 					<h5 [hidden]="!isEmpty(cast)" class="empty-msn">This actor doesn't have Cast</h5>
                 </div>
                 <div>
-                	<h3>Crew <small>last five...</small></h3>
+                	<h3>Crew <small>last five, orderded by release date...</small></h3>
                 	<div class="post-list post-grid">
-					    <div class="post-li col-md-4" *ngFor="let movie of crew | slice:0:5 " >
+					    <div class="post-li col-md-4" *ngFor="let movie of crew | slice:0:5 | orderBy:'-':'release_date'" >
 					        <div class="post-content">
 					            <div class="post-image">
 					                <a [routerLink]="['/movie', movie.id]">
