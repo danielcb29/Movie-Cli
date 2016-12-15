@@ -5,6 +5,8 @@ import { Genres } from './genres.mock';
 @Injectable()
 export class MovieHelperService {
 
+	youtube: string = 'https://www.youtube.com/embed/';
+
 	constructor(){}
 
 	getGenresName(ids: number[]): string[]{
@@ -28,5 +30,10 @@ export class MovieHelperService {
 		return result;
 	}
 
+	getMovieVideoUrl(value: string): string{
+		console.log(value);
+		return `${this.youtube}${value}`;
+
+	}
 
 }

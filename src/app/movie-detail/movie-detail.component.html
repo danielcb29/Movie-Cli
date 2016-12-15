@@ -10,8 +10,8 @@
                                 <span class="day"><i class="fa fa-calendar"></i>{{movie.release_date | date:'d'}}</span>
                                 <span class="month">
                                 {{movie.release_date | date:'MMM'}}
-                                <span [hidden]="movie.release_date"> -- </span>, {{movie.release_date | date:'y'}}
-                                <span [hidden]="movie.release_date"> -- </span>
+                                <span *ngIf="!movie.release_date"> -- </span>, {{movie.release_date | date:'y'}}
+                                <span *ngIf="!movie.release_date"> -- </span>
                                 </span>
                             </div>
                             <div class="post-likes">
@@ -33,14 +33,14 @@
 	                                </div>
 	                                <div class="post-desc">
 	                                     {{movie.overview}}
-	                                     <span [hidden]="movie.overview"> -- </span>
+	                                     <span *ngIf="!movie.overview"> -- </span>
 	                                </div>	
 	                                <div>
 	                                	<h4>Aditional Information:</h4>
 	                                	<p>
 	                                		<b>Original Languague:</b>
 	                                		{{movie.original_language | uppercase}}
-	                                		<span [hidden]="movie.original_language"> -- </span>
+	                                		<span *ngIf="!movie.original_language"> -- </span>
 	                                	</p>
 	                                	<p>
 	                                		<b>Production Companies:</b>
@@ -57,7 +57,7 @@
 	                                		<b>Runtime:</b>
 	                                		<i class="fa fa-clock-o"></i>
 	                                		{{movie.runtime}}
-	                                		<span [hidden]="movie.runtime"> -- </span>
+	                                		<span *ngIf="!movie.runtime"> -- </span>
 	                                		 minutes
 	                                	</p>
 	                                	<p>
@@ -73,6 +73,14 @@
                         </div>
                     </li> 
                 </ul>
+                <hr/>
+                <div>
+                <h3>Trailer <small>One of trailers...</small></h3>
+	                <div class="text-center">
+	                    <iframe width="560" height="315" [src]="getMovieVideoUrl(video.key) | safe" frameborder="0" allowfullscreen></iframe>
+	                </div>
+	                <h5 *ngIf="!movie" class="empty-msn">This movie doesn't have Trailer</h5>
+                </div>
             </div>
         </div>
     </div>

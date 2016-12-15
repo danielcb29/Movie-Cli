@@ -12,7 +12,7 @@
                             </div>
                             <div class="post-likes">
                                 <i class="fa fa-thumbs-o-up"></i>
-                                <span [hidden]="actor.popularity"> -- </span>
+                                <span *ngIf="!actor.popularity"> -- </span>
                                 <span class="number">{{castFloatPercent(actor.popularity)}}</span>
 
                             </div>
@@ -28,7 +28,7 @@
 	                                </h4>
 	                                <div class="post-by">
 	                                    <i>Also known as: 
-	                                    <span [hidden]="!isEmpty(actor.also_known_as)"> -- </span>
+	                                    <span *ngIf="isEmpty(actor.also_known_as)"> -- </span>
 	                                    {{actor.also_known_as}}
 	                                    </i>
 	                                </div>
@@ -43,17 +43,17 @@
 	                            		</p>
 	                            		<p>
 	                            			<b>Birthday:</b>
-	                            			<span [hidden]="!isEmpty(actor.birthday)"> -- </span>
+	                            			<span *ngIf="!actor.birthday"> -- </span>
 	                            			{{actor.birthday | date}}
 	                            		</p>
 	                            		<p>
 	                            			<b>Place of birth:</b>
-	                            			<span [hidden]="!isEmpty(actor.place_of_birth)"> -- </span>
+	                            			<span *ngIf="isEmpty(actor.place_of_birth)"> -- </span>
 	                            			{{actor.place_of_birth}}
 	                            		</p>
 	                            		<p>
 	                            			<b>Website:</b>
-	                            			<span [hidden]="!isEmpty(actor.homepage)"> -- </span>
+	                            			<span *ngIf="actor.homepage"> -- </span>
 	                            			{{actor.homepage}}
 	                            		</p>
 	                            		<p>
@@ -81,7 +81,7 @@
 					                </h4>
 					                <div class="post-by">
 					                    <i class="fa fa-calendar"></i> Release date : {{movie.release_date | date}}
-					                    <span [hidden]="movie.release_date"> -- </span>
+					                    <span *ngIf="!movie.release_date"> -- </span>
 					                </div>
 					                <div class="read-btn-container">
 					                    <a [routerLink]="['/movie', movie.id]">View details <i class="fa fa-angle-double-right"></i></a>
@@ -90,7 +90,7 @@
 					        </div>
 					    </div>
 					</div>
-					<h5 [hidden]="!isEmpty(cast)" class="empty-msn">This actor doesn't have Cast</h5>
+					<h5 *ngIf="isEmpty(cast)" class="empty-msn">This actor doesn't have Cast</h5>
                 </div>
                 <div>
                 	<h3>Crew <small>last five, orderded by release date...</small></h3>
@@ -108,7 +108,7 @@
 					                <div class="post-by">
 					                    <i class="fa fa-calendar"></i> Release date : 
 					                    {{movie.release_date | date}}
-					                    <span [hidden]="movie.release_date"> -- </span>
+					                    <span *ngIf="!movie.release_date"> -- </span>
 					                </div>
 					                <div class="read-btn-container">
 					                    <a [routerLink]="['/movie', movie.id]">View details <i class="fa fa-angle-double-right"></i></a>
@@ -117,7 +117,7 @@
 					        </div>
 					    </div>
 					</div>
-					<h5 [hidden]="!isEmpty(crew)" class="empty-msn">This actor doesn't have Crew</h5>
+					<h5 *ngIf="isEmpty(crew)" class="empty-msn">This actor doesn't have Crew</h5>
                 </div>
             </div>
         </div>
