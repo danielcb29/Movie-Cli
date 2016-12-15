@@ -48,7 +48,7 @@ export class PeopleDetailComponent implements OnInit {
 	}
 
 	isEmpty(list): boolean{
-		return this.peopleHelper.isEmpty(list);
+		return this.appHelper.isEmpty(list);
 	}
 
 	getTotalMovies(){

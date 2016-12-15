@@ -14,13 +14,5 @@ export class PeopleHelperService {
 		return `${castValue}%`;
 	}
 
-	isEmpty(list): boolean{
-		let result: boolean = true;
-		if(list){
-			result = list.length == 0;
-		}
-		return result;
-	}
-
 
 }

@@ -1,10 +1,21 @@
 <div class="row">
 	<div class="col-md-12">
 	    <div class="input-group m-b-20" id="search-group">
-	        <input type="text" id="search-input" class="form-control input-white" placeholder="Search person...">
+	        <input type="text" id="search-input" class="form-control input-white" placeholder="Search actor..." [(ngModel)]="query" (ngModelChange)="search()">
 	        <div class="input-group-btn">
-	            <button type="button" class="btn btn-inverse"><i class="fa fa-search"></i> Results</button>
+                <button type="button" class="btn btn-inverse" (click)="cleanInput()" ><i class="fa fa-times"></i></button>
+            </div>
+	    </div>
+	    <div [hidden]="isEmpty(results)" id="search-results">
+	        <div *ngFor="let match of results | slice:0:6">
+	            <a (click)="redirectToActor(match.id)">
+	                <div class="results-content">
+	                    <img class="image-result" src="{{ getImgUrl(match.profile_path) }}" alt="Poster of actor: {{match.name}" />{{ match.name }}
+	                </div>
+	            </a>
 	        </div>
+	        <hr/>
+	        <strong>Total results: {{totalResult}}</strong>
 	    </div>
 	</div>	
 </div>

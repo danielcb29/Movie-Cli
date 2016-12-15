@@ -6,4 +6,25 @@
 	padding-top: 25px;
     padding-left: 150px;
     padding-right: 150px;
+    width: 100%;
+}
+#search-results{
+	width: 100%; 
+	background-color: #ffffff; 
+	position: absolute; 
+	margin-top: -17px; 
+	z-index: 100; 
+	border: 1px solid #dddddd; 
+}
+.results-content{
+	margin-bottom: 2px; 
+	margin-top: 2px;
+}
+.image-result{
+	width: 25px; 
+	margin-right: 10px;
+}
+hr{
+	margin-top: 15px;
+    margin-bottom: 5px;
 }

@@ -26,6 +26,7 @@ import { AppHelperService } from './app.helper';
 import { MovieHelperService } from './movies/movie.helper';
 import { PeopleHelperService } from './people/people.helper';
 import { PeopleDetailService } from './people-detail/people-detail.service';
+import { SearchService } from './search/search.service';
 
 import {CapitalizePipe} from "./pipes/capitalize.pipe";
 
@@ -56,7 +57,8 @@ import {CapitalizePipe} from "./pipes/capitalize.pipe";
     AppHelperService,
     MovieHelperService,
     PeopleHelperService,
-    PeopleDetailService
+    PeopleDetailService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })

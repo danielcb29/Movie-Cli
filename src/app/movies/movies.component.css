@@ -4,3 +4,6 @@
 #img-list{
 	width: 185px;
 }
+.section-title{
+	z-index: 50;
+}
