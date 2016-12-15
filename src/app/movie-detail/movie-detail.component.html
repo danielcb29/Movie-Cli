@@ -73,6 +73,14 @@
                         </div>
                     </li> 
                 </ul>
+                <hr/>
+                <div>
+                <h3>Trailer <small>One of trailers...</small></h3>
+	                <div class="text-center">
+	                    <iframe width="560" height="315" [src]="getMovieVideoUrl(video.key) | safe" frameborder="0" allowfullscreen></iframe>
+	                </div>
+	                <h5 *ngIf="!movie" class="empty-msn">This movie doesn't have Trailer</h5>
+                </div>
             </div>
         </div>
     </div>

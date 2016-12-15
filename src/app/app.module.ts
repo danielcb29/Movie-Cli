@@ -32,6 +32,7 @@ import { SearchService } from './search/search.service';
 
 import {CapitalizePipe} from "./pipes/capitalize.pipe";
 import {OrderBy} from "./pipes/order-by.pipe";
+import {SafePipe} from "./pipes/safe.pipe";
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import {OrderBy} from "./pipes/order-by.pipe";
     CapitalizePipe,
     AboutMeComponent,
     NotFoundComponent,
-    OrderBy
+    OrderBy,
+    SafePipe
   ],
   imports: [
     BrowserModule,
