@@ -6,7 +6,7 @@
                 <button type="button" class="btn btn-inverse" (click)="cleanInput()" ><i class="fa fa-times"></i></button>
             </div>
 	    </div>
-	    <div [hidden]="isEmpty(results)" id="search-results">
+	    <div *ngIf="!isEmpty(results)" id="search-results">
 	        <div *ngFor="let match of results | slice:0:6">
 	            <a (click)="redirectToActor(match.id)">
 	                <div class="results-content">
