@@ -1,5 +1,30 @@
 # MovieCli
 
+This project has a Angular 2 client of TMDB API. 
+It is the final project of Angular course of AlertLogic company.
+
+In this project you will find:
+
+- **Movies component:** can get popular, upcoming, top rated and now playing movies. 
+- **Movie detail component:** can get movie details, movie videos (trailers)
+- **People component:** can get popular people
+- **People detail component:** can get people details, people credits (cast and crew) 
+- **Search component:** can search any actor in tmdb by name 
+- **Not found component:** manage not found urls and not found resources
+- **About me component:** show Daniel's information
+- **Header component:** manage application header
+- **Footer component:** manage application footer
+- **Menu component:** manage application  menu
+- **App component:** main component
+- **Pipes:** orderBy, capitalize, safe
+- Styles, html, static images 
+
+**Deploy url:**  https://danielcb29.github.io/Movie-Cli/
+
+**Author:** Daniel Correa
+
+**Notes**:
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.21.
 
 ## Development server
