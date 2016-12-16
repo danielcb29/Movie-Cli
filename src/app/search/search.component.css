@@ -9,23 +9,43 @@
     width: 100%;
 }
 #search-results{
-	width: 84%; 
+	width: 76%; 
 	background-color: #ffffff; 
 	position: absolute; 
 	margin-top: -17px; 
 	z-index: 100; 
 	border: 1px solid #dddddd; 
-	margin-left: 6%;
+	margin-left: 11%;
+
 }
 .results-content{
 	margin-bottom: 2px; 
 	margin-top: 2px;
+	border-bottom: 1px solid #ccc;
+	padding-left: 23px;
+	padding-top: 7px;
+}
+.results-content:hover{
+	background-color: #f4f4f4;
+	cursor: pointer;
+}
+a{
+	text-decoration: none;
 }
 .image-result{
-	width: 25px; 
+	width: 45px; 
+	height: 45px;
 	margin-right: 10px;
+	border-radius: 50%;
 }
-hr{
-	margin-top: 15px;
-    margin-bottom: 5px;
+.known-for{
+	font-size: 11px;
+	color: #707478;
+}
+.result-name{
+	color: black;
+}
+.total-results{
+	color: black;
+	padding: 10px;
 }

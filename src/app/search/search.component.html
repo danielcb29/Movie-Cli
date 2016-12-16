@@ -8,14 +8,20 @@
 	    </div>
 	    <div *ngIf="!isEmpty(results)" id="search-results">
 	        <div *ngFor="let match of results | slice:0:6">
-	            <a (click)="redirectToActor(match.id)">
+	        	<a (click)="redirectToActor(match.id)">
 	                <div class="results-content">
-	                    <img class="image-result" src="{{ getImgUrl(match.profile_path) }}" alt="Poster of actor: {{match.name}" />{{ match.name }}
+	                    <img class="image-result" src="{{ getImgUrl(match.profile_path) }}" alt="Poster of actor: {{match.name}" /> 
+	                    <strong class="result-name">{{ match.name }}</strong>
+	                    <br/>
+	                    <i class="known-for">
+		                	<b>Known for:</b> {{getMoviesNames(match.known_for)}}
+		                </i>
 	                </div>
-	            </a>
+                </a>
 	        </div>
-	        <hr/>
-	        <strong>Total results: {{totalResult}}</strong>
+	        <div class="total-results">
+	        	<strong>Total results: </strong>{{totalResult}}	
+	        </div>
 	    </div>
 	</div>	
 </div>

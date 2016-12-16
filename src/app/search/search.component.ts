@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from './search.service';
 import { AppHelperService } from '../app.helper';
+import { MovieHelperService } from '../movies/movie.helper';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +18,8 @@ export class SearchComponent implements OnInit {
 	constructor(
 		private searchService: SearchService,
 		private appHelper: AppHelperService,
-		private router: Router
+		private router: Router,
+		private movieHelper: MovieHelperService
 		) { }
 
 	ngOnInit() {
@@ -74,5 +76,15 @@ export class SearchComponent implements OnInit {
 	**/
 	getImgUrl(src: string): string {
 		return this.appHelper.getImgUrl(src);
+	}
+
+	/**
+	* Get movies names by movies object list 
+	* @param {movies} movies object list
+	* @return list of strings with movie names
+	**/
+	getMoviesNames(movies: Object[]): string{
+		let moviesList = this.movieHelper.getMoviesNames(movies).join();
+		return `${moviesList}...`;
 	}
 }
