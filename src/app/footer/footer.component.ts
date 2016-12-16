@@ -13,6 +13,9 @@ export class FooterComponent implements OnInit {
 
 	constructor(private movieService: MovieService) { }
 
+	/**
+	* Initialize the footer component, get the upcoming movies to show it
+	**/
 	ngOnInit() {
 	  	this.movieService.getUpcoming().subscribe(response => {
 			this.moviesUpcoming = response;

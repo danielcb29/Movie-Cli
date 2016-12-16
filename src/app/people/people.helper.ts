@@ -6,6 +6,11 @@ export class PeopleHelperService {
 
 	constructor(){}
 
+	/**
+	* Using a double number, cast to 2 digits percent
+	* @param {value} double to be cast 
+	* @return two digits percent
+	**/
 	castFloatPercet(value: number): string {
 		let castValue:string = "";
 		if (value){
@@ -14,6 +19,11 @@ export class PeopleHelperService {
 		return `${castValue}%`;
 	}
 
+	/**
+	* Return a gender display by id
+	* @param {id} id of gender
+	* @return gender display
+	**/
 	getGenderDisplay(id: number): string{
 		let result: string = "";
 		switch (id) {
