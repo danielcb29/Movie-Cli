@@ -49,7 +49,7 @@ export class PeopleComponent implements OnInit {
 	* @return list of strings with movie names
 	**/
 	getMoviesNames(movies: Object[]): string{
-		let moviesList = this.movieHelper.getMoviesNames(movies).join().slice(0,60);
+		let moviesList = this.movieHelper.getMoviesNames(movies).join().slice(0,31);
 		return `${moviesList}...`;
 	}
 
